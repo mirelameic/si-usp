@@ -1,0 +1,57 @@
+07/05/2021 09:57
+
+Polymorphism:
+Polymorphism is generally associated with one name with many forms; for example, if you have two integer operands with the addition operation, you expect to get a sum of the integers, but if the operands are two strings, you expect to get a concatenated string.
+
+Compile-time polymorphism: the compiler can bind the appropriate methods to the respective objects at compile time because it has all the necessary information and knows which method to call much earlier once the program is compiled. This is why it is also known as static binding or early binding. In Java, compile-time polymorphism can be achieved with method overloading.
+
+Method Overloading: the method names are the same, but the method signatures are different, they can vary with number, order, or the types of parameter, but the compiler will not consider the primitive return type to differentiate these methods.
+
+class Addition{
+	int sum(int x, int y){
+		return x + y;
+	}
+	double sum(double x, double y){
+		return x + y;
+	}
+	String sum(String s1, String s2){
+		return s1.concat(s2);
+	}
+}
+
+Method Overriding: in some situations, your derived class may want to redefine or modify the behavior of the parent class.
+When you invoke the method through this object, it calls the method that is defined in the ParentClass. When you invoke the method through this object, it calls the version defined in ChildClass.
+The child class method’s return type must be the same as the parent class method’s return type.
+
+
+class ParentClass{
+	public void showMe(){
+		System.out.println("Inside ParentClass");
+	}
+}
+class ChildClass extends ParentClass{
+	public void showMe(){
+		System.out.println("Inside ChildClass");
+	}
+}
+class Demonstration{
+	public static void main(String[] args){
+		ParentClass parent = new ParentClass();
+		ChildClass child = new ChildClass();
+		parent.showMe();
+		child.showMe();
+	}
+}
+
+Output:
+Inside ParentClass
+Inside ChildClass
+
+
+
+
+
+
+
+
+

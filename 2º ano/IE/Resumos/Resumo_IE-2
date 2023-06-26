@@ -1,0 +1,90 @@
+11/05/2021 12:29
+
+Experiments and Events
+Probability will be the way that we quantify how likely something is to occur.
+
+Types of Experiments:
+The theory of probability pertains to the various possible outcomes that might be obtained and the possible events that might occur when an experiment is performed.
+
+Experiment and Event: 
+An experiment is any process, real or hypothetical, in which the possible outcomes can be identified ahead of time. 
+An event is a well-defined set of possible outcomes of the experiment.
+Probability will be most useful when applied to a real experiment in which the outcome is not known in advance, but there are many hypothetical experiments that provide useful tools for modeling real experiments.
+
+The Mathematical Theory of Probability:
+As was explained, there is controversy in regard to the proper meaning and interpretation of some of the probabilities that are assigned to the outcomes of many experiments. However, once probabilities have been assigned to some simple outcomes in an experiment, there is complete agreement among all authorities that the mathematical theory of probability provides the appropriate methodology for the further study of these probabilities. 
+Almost all work in the mathematical theory of probability, from the most elementary textbooks to the most advanced research, has been related to the following two problems: 
+1. methods for determining the probabilities of certain events from the specified probabilities of each possible outcome of an experiment
+2. methods for revising the probabilities of events when additional relevant information is obtained.
+
+Set Theory
+
+The Sample Space:
+The collection of all possible outcomes of an experiment is called the sample space of the experiment.
+The sample space of an experiment can be thought of as a set, or collection, of different possible outcomes; and each outcome can be thought of as a point, or an element, in the sample space. Similarly, events can be thought of as subsets of the sample space.
+
+Rolling a Die . When a six-sided die is rolled, the SAMPLE SPACE can be regarded as containing the six numbers 1, 2, 3, 4, 5, 6, each representing a possible side of the die that shows after the roll. Symbolically, we write
+		S = {1, 2, 3, 4, 5, 6}.
+One EVENT A is that an even number is obtained, and it can be represented as the subset A = {2, 4, 6}. The event B that a number greater than 2 is obtained is defined by the subset B = {3, 4, 5, 6}.
+
+The Empty Set:
+Some events are impossible. For example, when a die is rolled, it is impossible to obtain a negative number. Hence, the event that a negative number will be obtained is defined by the subset of S that contains no outcomes. It is denoted by the symbol ∅, and in terms of events, the empty set is any event that cannot occur.
+Theorem: Let A be an event,  then ∅ ⊂ A.
+
+Finite and Infinite Sets:
+Some sets contain only finitely many elements, while others have infinitely many elements. There are two sizes of infinite sets that we need to distinguish.
+1. Countable: an infinite set A is countable if there is a one-to-one correspondence between the elements of A and the set of natural numbers {1, 2, 3, . . .}.
+Examples of countably infinite sets include the integers, the even integers, the odd integers, the prime numbers, and any infinite sequence.
+
+2. Uncountable: a set is uncountable if it is neither finite nor countable. If we say that a set has at most countably many elements, we mean that the set is either finite or countable.
+Examples of uncountable sets include the real numbers, the positive reals, the numbers in the interval [0, 1], and the set of all ordered pairs of real numbers.
+
+Complement: 
+The complement of a set A is defined to be the set that contains all elements of the sample space S that do not belong to A. The notation for the complement of A is A^c.
+Suppose again that A is the event that an even number is rolled; then Ac = {1, 3, 5} is the event that an odd number is rolled. (Fig-1)
+
+1. (Ac)c = A
+2. ∅c = S
+3. Sc = ∅
+
+Union of Two Sets: 
+If A and B are any two sets, the union of A and B is defined to be the set containing all outcomes that belong to A alone, to B alone, or to both A and B. The notation for the union of A and B is A ∪ B.
+In terms of events, A ∪ B is the event that either A or B or both occur.
+
+1. A ∪ B = B ∪ A
+2. A ∪ ∅ = A
+3. A ∪ Ac = S
+4. A ∪ A = A
+5. A ∪ S = S
+6. if A ⊂ B, then A ∪ B = B
+7. A ∪ B ∪ C = (A ∪ B) ∪ C = A ∪ (B ∪ C)
+
+Intersection of Two Sets:
+If A and B are any two sets, the intersection of A and B is defined to be the set that contains all outcomes that belong both to A and to B. The notation for the intersection of A and B is A ∩ B.
+In terms of events, A ∩ B is the event that both A and B occur. (Fig-2)
+
+1. A ∩ B = B ∩ A
+2. A ∩ ∅ = ∅
+3. A ∩ A = A
+4. A ∩ S = A
+5. A ∩ Ac = ∅
+6. if A ⊂ B, then A ∩ B = A.
+7. A ∩ B ∩ C = (A ∩ B) ∩ C = A ∩ (B ∩ C) (Fig-3)
+
+De Morgan’s Laws: 
+For every two sets A and B,
+		(A ∪ B)c = Ac ∩ Bc and (A ∩ B)c = Ac ∪ Bc.
+
+Distributive Properties:
+For every three sets A, B, and C,
+		A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C) and A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).
+
+Partitioning a Set:
+For every two sets A and B, (A ∩ B) and (A ∩ Bc) are disjoint and
+		A = (A ∩ B) ∪ (A ∩ Bc)
+In addition, B and (A ∩ Bc) are disjoint, and
+		A ∪ B = B ∪ (A ∩ Bc)
+
+
+
+

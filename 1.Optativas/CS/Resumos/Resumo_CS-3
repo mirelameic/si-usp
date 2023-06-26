@@ -1,0 +1,29 @@
+07/05/2021 14:23
+
+Music: Pitch and Frequency
+
+A NOTE consists of a sound that has a certain unchanging (or approximately unchanging) frequency and a certain DURATION. Notes are generally played on instruments (which can include the human voice). The shape of vibration of a note will depend on the TIMBRE of the instrument which will determine the shape as a function of elapsed time, frequency and amplitude.
+** there are two subtly different usages of the word “note”: to refer to a possible pitch value from a scale (“the note C sharp”), and, as defined earlier, to refer to a particular occurrence of a musical sound with that pitch value in an item of music (“the third note in this song”).
+
+In musical contexts, frequency is referred to as pitch. Strictly speaking, pitch is a perceived quantity that corresponds almost exactly to frequency — variables such as timbre and amplitude can have a small effect on perceived pitch, but mostly we can ignore these effects.
+
+An important component of music perception is the perception of INTERVALS between notes. Perceived intervals correspond to ratios of frequencies. That is, the differences between two pairs of notes are considered equal if the ratios are equal.
+To give an example, the interval between two notes with frequencies 200Hz and 300Hz is perceived to be the same as the interval between 240Hz and 360Hz, since the ratio is 2 to 3 in both cases. Because intervals relate to ratios, it is often convenient to represent musical frequencies on a logarithmic scale.
+** A logarithm is a function f such that f (x*y) = f (x) + f (y). The base of a logarithm is the number b such that f (b) = 1. We will see that, in a musical context, the number of semitones in an interval is equal to the logarithm of the ratio of frequencies represented by the interval, where the base of the logarithm is (2)¹/¹². A logarithmic scale is one that locates values according to their logarithms. (This is a non-musical meaning of the word “scale”.)
+There are two types of interval that have special significance in music:
+	1. Two notes whose frequencies differ by a power of 2 are psychologically perceived to have a similar quality. For example, a note at 250Hz would be perceived to have a similar quality to one at 500Hz, even though the 250Hz note is obviously a lower note than the 500Hz note. This ratio of 2 is normally referred to as an octave (the “oct” in “octave” means 8, and derives from the particulars of the scale used in Western music).
+	2. The second type of musically important interval is any simple fractional ratio that is not a power of 2. Ratios that play a significant role in Western music include 3/2, 4/3, 5/4, 6/5 and 8/5. Two notes separated by such an interval do not sound similar in the way that notes separated by an octave sound similar, but the interval between them sounds subjectively “pleasant” (whether the notes are played simultaneously or one after the other). This phenomenon is known as CONSONANCE and the intervals are called consonant intervals.
+
+The ratios that define consonant intervals are the same as the ratios that exist between the harmonic components of a single (constant frequency) sound. For example, a musical note at 200Hz will have harmonics at 400Hz and 600Hz, and the ratio between these is 2:3, which corresponds to the harmonic interval that would exist between two notes with fundamental frequencies of 400Hz and 600Hz. It follows that two notes related by a consonant interval will have some identical harmonics: for example the 3rd harmonic of a 400Hz sound is 1200Hz which is identical to the 2nd harmonic of a 600Hz sound. However, harmonic intervals can be recognised even between notes that have no harmonics (i.e. pure sine waves), so the recognition of harmonic intervals is not necessarily dependent on recognising matching harmonics.
+
+In most forms of music, notes are taken from SCALES. A scale is a fixed set of pitch values (or notes) which are used to construct music. Western Music has mostly adopted scales that are subsets of the well-tempered chromatic scale. The chromatic scale consists of all the black and white notes of the piano (Fig-9)
+
+Notes on the PIANO increase in frequency as you go from left to right. The interval between each note and the next is always the same, and is a ratio of (2)¹/¹², which to ten decimal places (an accuracy that far exceeds the capabilities of the human auditory system), is 1.0594630943. Each such interval is called a semitone (although this term can also be used to represent a similar sized interval on other scales)
+If we look at the piano or similar keyboard, we will see a pattern of 5 black notes (a group of 2 and a group of 3) and 7 white notes, which is repeated all the way along the keyboard. Each such pattern is 1 octave higher than the pattern to the left of it.
+
+
+
+
+
+
+

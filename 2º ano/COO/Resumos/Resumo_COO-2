@@ -1,0 +1,69 @@
+05/05/2021 22:12
+
+Static:
+Sometimes you may want a class member to be common to all of the class’s objects. In this case, it makes sense to be able to access them using the class (instead of using an object of the class). When you create such members, they are called class variables or class methods. A class member is also known as a static member.
+
+static int x = 25.5;
+
+public static int multipl(){
+      return x*5;
+}
+
+
+Access Control:
+You can provide controlled access to your classes, interfaces, fields, and methods. Actually, by using access control, you can provide encapsulation too.
+
+• public
+• private
+• protected
+• default (not using any modifier)
+
+When you attach a class member with the public modifier, you can access the member from outside the code. On the contrary, when you use a private modifier, the member can be accessed only by other members of the class. If you do not use any access modifier for a member, it can be accessed only within the package.
+
+** this is why the main() method is always public. It is called by the Java runtime system, which is outside the code.
+
+Getter-Setter Methods:
+Experts always suggest you make your instance variables private unless there is a specific reason to use other access modifiers. And you can make your class variable either read-only or write-only.
+
+public int getPriInt(){
+	return priInt;
+}
+
+public void setPriInt(int priInt){
+	this.priInt = priInt;
+}
+
+Initialization Block:
+You can get an alternative to constructors when you use initialization blocks. An initialization block can be either static or non-static.
+Notice that initialization blocks are executed before the Constructor and in the order in which they appear in your class.
+
+{
+	System.out.println("Initialization block-1 is executed. Setting a=1.");
+	a = 1;
+}
+
+{
+	System.out.println("Initialization block-2 is executed. Setting b=2;");
+	b = 2;
+}
+
+** apart from initialization blocks and constructors, you can also initialize instance variables in final methods. A final method is a method that cannot be overridden in the subclass.
+
+Q: I have constructors, so why would I want to use an initialization block?
+If you have multiple constructors in your class, you can share common code between the constructors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

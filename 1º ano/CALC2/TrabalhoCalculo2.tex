@@ -1,0 +1,510 @@
+\documentclass[12pt]{article}
+
+% Brazilian portuguese language stuff (acents, etc).
+\usepackage[brazil]{babel}
+
+% Input encoding (or charset).
+\usepackage[utf8]{inputenc}
+% If you experience weird symbols try the encoding below.
+%\usepackage[latin1]{inputenc}
+
+% Font encoding
+\usepackage[T1]{fontenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Standard Math symbols.
+\usepackage{amsmath,amssymb,latexsym}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Trabalho extra de Cálculo 2}
+\author{Mirela Mei Costa -- Nº USP: 11208392}
+\date{\today}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 1:}
+Sabe-se que:
+\begin{align*}
+\int \frac{1}{\cos^{2}x}\;dx
+&\;=\; \int1 + \tan^{2}x\;dx
+\end{align*}
+Usando:
+\begin{align*}
+u = \tan x
+\implies du = \sec^{2}x\;dx
+\end{align*}
+Sabe-se que:
+\begin{align*}
+\sec^{2}x = \tan^{2}x + 1
+\end{align*}
+Portanto:
+\begin{align*}
+du = \tan^{2}x + 1\;dx
+\implies du = u^{2} + 1\;dx
+\implies dx = \frac{du}{u^{2} + 1}
+\end{align*}
+Substituindo na integral:
+\begin{align*}
+\int 1 + \tan^{2}x\;dx
+&\;=\; \int \frac{1 + u^{2}}{u^{2} + 1}\;du\\
+&\;=\; \int du = u + C\\
+Resposta: &\;=\; \tan x + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 2:}
+\begin{align*}
+\int \frac{\sin x \cdot \cos x}{\sqrt{\cos 2x}}\;dx
+\end{align*}
+Usando:
+\begin{align*}
+u = \cos 2x \implies du = -2 \sin 2x\;dx
+\end{align*}
+Sabe-se que:
+\begin{align*}
+\sin 2x = 2\sin x \cdot \cos x
+\end{align*}
+Portanto:
+\begin{align*}
+du = -4\sin x \cdot \cos x \;dx
+\implies  - \frac {1}{4}\;du = \sin x \cdot \cos x \;dx
+\end{align*}
+Substituindo na integral:
+\begin{align*}
+\int \frac{\sin x \cdot \cos x}{\sqrt{\cos 2x}}\;dx 
+&\;=\; - \frac {1}{4}\int \frac{du}{\sqrt{u}}\\
+&\;=\;  - \frac {1}{4}\int u^{-\frac{1}{2}}\;du\\
+&\;=\; - \frac {1}{4}\left ( 2u^{\frac{1}{2}} \right ) + C\\
+&\;=\; -\frac{\sqrt{u}}{2} + C\\ 
+Resposta: &\;=\; -\frac{\sqrt{\cos 2x}}{2} + C\\\\\\\\\\\\\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 3:}
+\begin{align*}
+\int \left ( 1-x^{2} \right )^{2} \;dx
+\end{align*}
+Pelo item A do exercício 3.4.7.1:
+\begin{align*}
+\int \left ( 1-x^{2} \right )^{2} \;dx
+&\;=\; x \left ( 1-x^{2} \right )^{2} \; +4 \int x^{2} \left  (1 - x^{2}  \right ) dx\\
+&\;=\; x \left ( 1-x^{2} \right )^{2} \; +4 \int \left  (x^{2} - x^{4}  \right ) dx\\
+&\;=\; x \left ( 1-x^{2} \right )^{2} \; +4 \left ( \frac{x^{3}}{3} - \frac{x^{5}}{5} \right ) + C\\
+Resposta: &\;=\; x \left ( 1-x^{2} \right )^{2} \; + \frac{4x^{3}}{3} - \frac{4x^{5}}{5} + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 4:}
+Sabe-se que:
+\begin{align*}\int \left ( 1-x^{2} \right )\; dx = \int \cos^{5}u\; du
+\end{align*}
+Pelo item A do exercício 3.4.7.3:
+\begin{align*}\int \cos^{5}u\; du = \frac{\sin u \cdot \cos^{4}u}{5} + \frac{4}{5}\int\cos^{3}u \;du\\
+\end{align*}
+Aplicando novamente:
+\begin{align*}\int \cos^{5}u\; du
+&\;=\; \frac{\sin u \cdot \cos^{4}u}{5} + \frac{4}{5}\left (\frac{\sin u \cdot \cos^{2}u}{3}+\frac{2}{3}\int \cos u \;du  \right )\\
+&\;=\; \frac{\sin u \cdot \cos^{4}u}{5} + \frac{4 \; sin\; u \cdot \cos^{2}u}{15}+\frac{2}{3} \sin u + C\\
+Resposta: &\;=\;\frac{x\cdot\left ( 1-x^{2} \right )^{2}}{5} + \frac{4x\left ( 1-x^{2} \right )}{15} + \frac{2}{3}x + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 5:}
+Sabe-se que:
+\begin{align*}\int \cos^{5}x\;dx = \int \cos^{4}x\cdot \cos x\; dx = \int \left ( 1-\sin^{2}x \right )^{2}\cdot\cos x \;dx\\
+\end{align*}
+Usando:
+\begin{align*}
+u = \sin x \;\;\; e \;\;\; du = \cos x \;dx
+\end{align*}
+Portanto:
+\begin{align*}
+\int \left ( 1-\sin^{2}x \right )^{2}\cdot\cos x \; dx \;=\; \int \left ( 1-u^{2} \right )^{2} \;du\\
+\;=\; \int \left ( 1-2u^{2} +u^{4} \right )\; du = u -\frac{2u^{3}}{3}+\frac{u^{5}}{5}+C\\
+Resposta: \;=\; \sin x - \frac{2}{3} \sin^{3}x + \frac{sen^{5}x}{5} + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 6:}
+\begin{align*}
+\int \cos^{3}x\; dx\\
+\end{align*}
+Pelo item A do exercício 3.4.7.3:
+\begin{align*}
+\int \cos^{3}x\; dx 
+&\;=\; \frac{\sin x \cdot \cos^{2} x}{3} + \frac{2}{3} \int \cos x \; dx\\
+Resposta: &\;=\; \frac{\sin x \cdot \cos^{2} x}{3} + \frac{2}{3} \sin x + C\\\\\\\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 7:}
+Sabe-se que:
+\begin{align*}
+\int \cos ^{3} x\; dx = \int \cos ^{2}x \cdot \cos x \;dx = \int \left ( 1-\sin ^{2}x \right )\cdot \cos x \;dx\\
+\end{align*}
+Pela substituição simples:
+\begin{align*}
+u = \sin x \;\;\; e \;\;\; du = \cos x \;dx
+\end{align*}
+Portanto:
+\begin{align*}
+\int \left ( 1-\sin^{2}x \right )\cos x \;dx 
+&\;=\; \int \left ( 1- u^{2} \right )du\\
+&\;=\; u -\frac{u^{3}}{3} + C\\
+Resposta: &\;=\; \sin x - \frac{sen^{3}x}{3} + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 8:}
+\begin{align*}
+\int \frac{1}{\left ( 1+x^{2} \right)^{2}}\; dx\\
+\end{align*}
+Pelo item A do exercício 34.7.2:
+\begin{align*}
+\int \frac{1}{\left ( 1+x^{2} \right)^{2}}\; dx 
+&\;=\; \frac{1}{2}\left ( \frac{x}{1+x^{2}} \right )+\frac{1}{2}\int \frac{dx}{1+x^{2}}\\
+Resposta: &\;=\;\frac{x}{2+2x^{2}}+\frac{1}{2}\arctan x + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 9:}
+Sabe-se que:
+\begin{align*}
+\int \frac{1}{\left ( 1+x^{2} \right )^{2}}\; dx &\;=\; \int \left ( \frac{1}{1+x^{2}}-\frac{x^{2}}{\left ( 1+x^{2} \right )^{2}} \right )\; dx\\
+&\;=\; \int \frac{1}{1+x^{2}}\;dx-\int \frac{x^{2}}{\left ( 1+x^{2} \right )^{2}}\;dx \\
+&\;=\; \arctan x - \int \frac{x^{2}}{\left ( 1+x^{2} \right )^{2}}\;dx\\
+\end{align*}
+Calculando por partes, usando:
+\begin{align*}
+&u = x \;\;\; e \;\;\; du = dx\\
+&dv = \frac{x}{\left ( 1+x^{2} \right )^{2}} \;\;\;\; v= -\frac{1}{2\left ( 1+x^{2} \right )}\\
+\end{align*}
+Portanto:
+\begin{align*}
+\int \frac{1}{\left ( 1+x^{2} \right )^{2}}\; dx &\;=\;\arctan x -\left ( \frac{-x}{2\left ( 1+x^{2} \right )} +\frac{1}{2}\int\frac{dx}{1+x^{2}} \right )\\
+&\;=\;\arctan x + \frac{x}{2\left ( 1+x^{2} \right )}-\frac{1}{2}\int \frac{dx}{1+x^{2}}\\
+&\;=\;\arctan x + \frac{x}{2\left ( 1+x^{2} \right )}-\frac{1}{2}\arctan x+C\\
+Resposta: &\;=\;\frac{1}{2}\arctan x+\frac{x}{2\left ( 1+x^{2} \right )}+C\\\\\\\\\\\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 10:}
+\begin{align*}
+\int x^{3}\sqrt{1+x^{2}}\;dx\\
+\end{align*}
+Usando:
+\begin{align*}
+&u = x^{2}+1\implies du = 2x\;dx \implies \frac{du}{2} = x\;dx \\ 
+&u= x^{2}+1\implies x^{2} = u-1\\
+\end{align*}
+Substituindo:
+\begin{align*}
+&\int x^{3}\sqrt{1+x^{2}}\;dx = \int x^{2}\sqrt{1+x^{2}}\cdot x\;dx = \int \left ( u-1 \right )\cdot \sqrt{u} \;\; \frac{du}{2}\\
+&=\frac{1}{2}\int \left ( u^{\frac{3}{2}} -u^{\frac{1}{2}}\right )du = \frac{1}{2}\left ( \frac{2u^{\frac{5}{2}}}{5}-\frac{2u^{\frac{3}{2}}}{3} \right )+C 
+= \frac{u^{\frac{5}{2}}}{5}-\frac{u^{\frac{3}{2}}}{3}+C\\
+&Resposta: = \frac{\left ( x^{2}+1 \right )^{\frac{5}{2}}}{5}-\frac{\left ( x^{2}+1 \right )^{\frac{3}{2}}}{3}+C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 11:}
+\begin{align*}
+\frac{1}{2}\int x^{2}\cdot 2x\;\sqrt{1+x^{2}}\; dx\\
+\end{align*}
+Aplicando a integral por partes:
+\begin{align*}
+&u = x^{2} \;\;\;e\;\;\; du = 2x\;dx\\ \\
+&dv=2x\sqrt{1+x^{2}}\;dx \;\;\;e\;\;\; v=\frac{2}{3}\sqrt{\left ( x^{2}+1 \right )^{3}}\\
+\end{align*}
+Tem-se:
+\begin{align*}
+\int x^{2}\cdot 2x\cdot\sqrt{1+x^{2}}\; dx = \frac{2}{3}x^{2}\sqrt{\left ( x^{2}+1 \right )^{3}}-\frac{2}{3}\int 2x\sqrt{\left ( x^{2} +1\right )^{3}}\;dx\\
+\end{align*}
+Aplicando novamente a integral por partes:
+\begin{align*}
+&u = 2 \;\;\;e\;\;\; du = 0\\ \\
+&dv = x\sqrt{\left ( x^{2}+1 \right )^{3}}\;dx \;\;\;e\;\;\; v=\frac{\sqrt{\left ( x^{2}+1 \right )^{5}}}{5}\\
+\end{align*}
+Tem-se:
+\begin{align*}
+\int x^{2}\cdot 2x\sqrt{1+x^{2}}\;dx = \frac{2}{3}x^{2}\sqrt{\left ( x^{2}+1 \right )^{3}}-\frac{2}{3}\left ( \frac{2}{5}\sqrt{\left ( x^{2}+1 \right )^{5}}-0 \right )\\
+=\frac{2}{3}x^{2}\sqrt{\left ( x^{2}+1 \right )^{3}}-\frac{4}{15}\sqrt{\left ( x^{2}+1 \right )^{5}}\\
+\end{align*}
+Portanto:
+\begin{align*}
+Resposta: \frac{1}{2}\int x^{2}\cdot 2x\cdot\sqrt{1+x^{2}}\; dx = \frac{x^{2}\sqrt{\left ( x^{2}+1 \right )^{3}}}{3}-\frac{2}{15}\sqrt{\left ( x^{2}+1 \right )^{5}}+C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 12:}
+Sabe-se que:
+\begin{align*}
+\int \frac{1}{\cos ^{3}x}\;dx = \int \frac{1}{\cos x}\cdot \frac{1}{cos^{2}x}\;dx\\
+\end{align*}
+Aplicando a integral por partes:
+\begin{align*}
+&u =\frac{1}{\cos x} \;\;\;e\;\;\; du = \sec x \cdot \tan x\;dx\\ \\
+&dv = \frac{1}{\cos ^{2}x}\;dx \;\;\;e\;\;\; v=\tan x\\
+\end{align*}
+Então:
+\begin{align*}
+\int \frac{1}{\cos ^{3}x}\;dx &= \frac{\tan x}{\cos x}-\int \sec x \cdot \tan^{2}x\;dx\\
+&\;=\;\frac{\tan x}{\cos x}-\int \sec x \cdot \left ( \sec ^{2}x -1 \right )\;dx\\
+&\;=\;\frac{\tan x}{\cos x}-\int \sec^{3} x\;dx +\int \frac{1}{\cos x}\;dx\\
+&\;=\;\frac{\tan x}{\cos x}+\log \left (\frac{1+\sin x}{1-\sin x}  \right )^{\frac{1}{2}} - \int \sec ^{3}x\;dx\\
+\end{align*}
+Tem-se:
+\begin{align*}
+2\int \frac{1}{\cos ^{3}x}\;dx = \frac{\tan x}{\cos x} + \log \left ( \frac{1+\sin x}{1-\sin x} \right )^{\frac{1}{2}}+C\\
+\end{align*}
+Portanto:
+\begin{align*}
+Resposta: \int \frac{1}{\cos ^{3}x}\;dx = \frac{1}{2}\left (\frac{\tan x}{\cos x} + \log \left ( \frac{1+\sin x}{1-\sin x} \right )^{\frac{1}{2}}  \right ) + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 13:}
+Sabe-se que:
+\begin{align*}
+\int \frac{1}{\cos ^{4}x}\;dx = \int \frac{1}{\cos ^{2}x}\cdot \int \frac{1}{\cos ^{2}x}\;dx\\
+\end{align*}
+Aplicando a integral por partes:
+\begin{align*}
+&u =\frac{1}{\cos^{2} x} \;\;\;e\;\;\; du = 2\sec^{2} x \cdot \tan x\\ \\
+&dv = \frac{1}{\cos ^{2}x}\;dx \;\;\;e\;\;\; v=\tan x\\
+\end{align*}
+Então:
+\begin{align*}
+\int \frac{1}{\cos^{4}x}\;dx = \frac{\tan x}{\cos^{2}x}-2\int\sec^{2}x\tan^{2}x\;dx\\
+\end{align*}
+Usando:
+\begin{align*}
+w = \tan x \;\;\;e\;\;\; dw = \sec^{2}x\;dx
+\end{align*}
+Portanto:
+\begin{align*}
+\int \frac{1}{\cos^{4}x}\;dx &= \frac{\tan x}{\cos^{2}x}-2\int w^{2}\;dw\\
+&\;=\; \frac{\tan x}{\cos^{2}x}-\frac{2}{3}w^{3}+C\\
+Resposta: &\;=\;\frac{\tan x}{\cos^{2}x}-\frac{2}{3}\tan^{3}x+C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 14:}
+Sabe-se que:
+\begin{align*}
+\int \frac{1}{\cos^{4}x}\;dx = \int \sec^{4}x\;dx &= \int\sec^{2}x\cdot\sec^{2}x\;dx\\
+&\;=\;\int\left ( \tan^{2}x+1 \right )\sec^{2}x\;dx\\
+&\;=\;\int\tan^{2}x\cdot\sec^{2}x\;dx+\int\sec^{2}x\;dx\\
+\end{align*}
+Usando:
+\begin{align*}
+u = \tan x \;\;\;e\;\;\; du = \sec^{2}x\;dx
+\end{align*}
+Portanto:
+\begin{align*}
+\int\frac{1}{\cos^{4}x}\;dx &= \int u^{2}\;du + \tan x\\
+&\;=\;\frac{u^{3}}{3}+\tan x + C\\
+Resposta: &\;=\;\frac{\tan ^{3}x}{3}+\tan x + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 15:}
+\begin{align*}
+\int \frac{1}{\sin^{4}x}\;dx &= \int \csc ^{4}x\;dx = \int\csc^{2}x\cdot \csc^{2}x\;dx\\
+&\;=\;\int\left ( \cot ^{2}x+1 \right )\cdot\csc^{2}x\;dx\\
+&\;=\;\cot ^{2}x\cdot \csc^{2}x\;dx+\int\csc^{2}x\;dx\\
+\end{align*}
+Usando:
+\begin{align*}
+u = \cot x \;\;\;e\;\;\; du = \csc^{2}x\;dx\\
+\end{align*}
+Portanto:
+\begin{align*}
+&\int \frac{1}{\sin^{4}x}\;dx = -\int u^{2}\;du - \cot x = -\frac{u^{3}}{3} - cot x + C\\
+&Resposta: -\frac{\cot ^{3}x}{3} - \cot x + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 16:}
+Sabe-se que:
+\begin{align*}
+\int \frac{1}{\sin^{4}x}\;dx = \int\frac{1}{\cos^{4}\left ( \frac{\pi}{2}-x \right )}\;dx\\
+\end{align*}
+Usando:
+\begin{align*}
+u = \frac{\pi}{2}-x \;\;\;e\;\;\; du = -dx\\
+\end{align*}
+Portanto (consultando o exercício 14):
+\begin{align*}
+&\int \frac{1}{\sin^{4}x}\;dx = -\int\frac{1}{\cos^{4}u}\;du
+= -\left ( \frac{\tan^{3}u}{3}+\tan u \right ) + C\\ 
+&Resposta: = -\frac{\tan^{3}\left ( \frac{\pi}{2}-x \right )}{3}+\tan \left (\frac{\pi}{2}-x  \right ) + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 17:}
+Sabe-se que:
+\begin{align*}
+\int \frac{\ln \left ( \cos x \right )}{\cos ^{2}x}\;dx = \tan x\cdot \ln\left ( \cos x \right ) + \int \tan^{2}x \;dx\\
+\end{align*}
+Usando:
+\begin{align*}
+ u = \tan x \implies x = \arctan u \implies dx = \frac{1}{u^{2}+1}\;du\\
+\end{align*}
+Então:
+\begin{align*}
+\int \frac{\ln\left ( \cos x \right )}{\cos^{2}x}\;dx = \tan x \cdot\ln\left ( \cos x \right ) + \int\frac{u^{2}}{u^{2}+1}\;du\\
+\end{align*}
+Usando a divisão de polinômios:
+\begin{align*}
+\int \frac{\ln\left ( \cos x \right )}{\cos^{2}x}\;dx &= \tan x \cdot\ln\left ( \cos x \right ) +  \int\left (1-\frac{1}{u^{2}+1}  \right )\;du\\
+&\;=\;\tan x \cdot\ln\left ( \cos x \right ) +  \int du - \int \frac{1}{u^{2}+1}\;du\\
+&\;=\;\tan x \cdot\ln\left ( \cos x \right ) +  u - \arctan u + C\\
+Resposta: &\;=\;\tan x \cdot\ln\left ( \cos x \right ) +  \tan x - x + C\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 18:}
+\begin{align*}
+\int \frac{\ln\left ( \cos x \right )}{\cos^{2}x}\;dx &= \tan x \cdot\ln\left ( \cos x \right )+\int\tan ^{2}x\;dx\\
+&\;=\;\tan x \cdot\ln\left ( \cos x \right)+\int\frac{\sin^{2}x}{\cos^{2}x}\;dx\\
+&\;=\;\tan x \cdot\ln\left ( \cos x \right )+\int\frac{1-\cos^{2}x}{\cos^{2}x}\;dx\\
+&\;=\;\tan x \cdot\ln\left ( \cos x \right )+\int\frac{1}{\cos^{2}x}\;dx-\int dx\\
+Resposta: &\;=\;\tan x \cdot\ln\left ( \cos x \right )+\tan x - x + C\\\\\\\\\\\\\\
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 19:}
+Usando a substituição
+\begin{equation*}
+u = 1-x^{2}
+\implies du = -2x\,dx
+\implies -\frac{du}{2} = x\,dx
+\end{equation*}
+resulta:
+\begin{align*}
+\int x^{3}\sqrt{1-x^{2}}\,dx
+&\;=\; -\frac{1}{2}\int(1-u)u^{1/2}\,du \\
+&\;=\; -\frac{1}{2}\int\left(u^{1/2} - u^{3/2}\right)\,du \\
+&\;=\; -\frac{1}{2}\left(\frac{2}{3}\,u^{3/2} \;-\; \frac{2}{5}u^{5/2}\right) \\
+&\;=\; \frac{u^{5/2}}{5} \;-\; \frac{u^{3/2}}{3} \\
+&\;=\; \frac{(1-x^{2})^{5/2}}{5} \;-\; \frac{(1-x^{2})^{3/2}}{3}.
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Exercício 20:}
+Usando a substituição
+\begin{equation*}
+x = \sin u
+\implies dx = \cos u\,du
+\end{equation*}
+tem-se:
+\begin{equation}\label{ex-20:eqn-1}
+\int x^{3}\sqrt{1-x^{2}}\,dx
+\;=\; \int\sin^{3}u\cdot\cos u\cdot\cos u\,du
+\;=\; \int\sin^{3}u\cdot\cos^{2}u\,du.
+\end{equation}
+Considere $f$ como
+\begin{equation*}
+f(u) = \cos u
+\implies f'(u) = -\sin u
+\end{equation*}
+e a função $g$ dada por:
+\begin{equation*}
+g'(u) = \sin^{3}u\cdot\cos u
+\implies g(u) = \frac{\sin^{4}u}{4}.
+\end{equation*}
+Logo, integrando por partes tem-se
+\begin{multline*}
+\int\sin^{3}u\cdot\cos u\cdot\cos u\,du
+\;=\; \frac{\sin^{4}u}{4}\,\cos u \;+\; \frac{1}{4}\int\sin^{5} u\,du \\
+\;=\; \frac{\sin^{4}u}{4}\,\cos u \;+\; \frac{1}{4}\int(1-\cos^{2}u)\sin^{3}u\,du,
+\end{multline*}
+de onde segue que:
+\begin{equation}\label{ex-20:eqn-2}
+5\int\sin^{3}u\cdot\cos^{2}u\,du
+\;=\; \sin^{4}u\cdot\cos u \;+\; \int\sin^{3}u\,du.
+\end{equation}
+Agora, considere $f$ como
+\begin{equation*}
+f(u) = \sin^{2} u
+\implies f'(u) = 2\sin u\cdot\cos u
+\end{equation*}
+e a função $g$ dada por:
+\begin{equation*}
+g'(u) = \sin u
+\implies g(u) = -\cos u.
+\end{equation*}
+Logo, integrando por partes tem-se
+\begin{multline*}
+\int\sin^{3}u\,du
+\;=\; \int\sin^{2}u\cdot\sin u\,du
+\;=\; -\sin^{2}u\cdot\cos u \;+\; 2\int\sin u\cdot\cos^{2}u\,du \\
+\;=\; -\sin^{2}u\cdot\cos u \;+\; 2\int(1-\sin^{2}u)\sin u\,du,
+\end{multline*}
+de onde segue que:
+\begin{multline}\label{ex-20:eqn-3}
+3\int\sin^{3}u\,du
+\;=\; -\sin^{2}u\cdot\cos u \;+\; 2\int\sin u\,du \\
+\;=\; -\sin^{2}u\cdot\cos u \;-\; 2\cos u.
+\end{multline}
+Finalmente, combinando as identidades (\ref{ex-20:eqn-1}),
+(\ref{ex-20:eqn-2}) e (\ref{ex-20:eqn-3}) resulta:
+\begin{equation*}
+15\int x^{3}\sqrt{1-x^{2}}\,dx
+\;=\; 3\sin^{4}u\cdot\cos u
+\;-\; \left(\sin^{2}u\cdot\cos u \;+\; 2\cos u\right).
+\end{equation*}
+O último termo acima pode ser expressado em função do cosseno
+observando
+\begin{multline*}
+\sin^{4}u\cdot\cos u
+\;=\; (1-\cos^{2}u)^{2}\cos u \\
+\;=\; (1 \;-\; 2\cos^{2}u \;+\; \cos^{4}u)\cos u
+\;=\; \cos u \;-\; 2\cos^{3}u \;+\; \cos^{5}u,
+\end{multline*}
+como também:
+\begin{multline*}
+\sin^{2}u\cdot\cos u \;+\; 2\cos u \\
+\;=\; (1-\cos^{2}u)\cos u \;+\; 2\cos u
+\;=\; 3\cos u \;-\; \cos^{3}u.
+\end{multline*}
+Logo, tem-se
+\begin{equation*}
+15\int x^{3}\sqrt{1-x^{2}}\,dx
+\;=\; -5\cos^{3}u \;+\; 3\cos^{5}u
+\end{equation*}
+de onde resulta:
+\begin{equation*}
+\int x^{3}\sqrt{1-x^{2}}\,dx
+\;=\; \frac{\cos^{5}u}{5} \;-\; \frac{\cos^{3}u}{3}
+\;=\; \frac{(1-x^{2})^{5/2}}{5} \;-\; \frac{(1-x^{2})^{3/2}}{3}.
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

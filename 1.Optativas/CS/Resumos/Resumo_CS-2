@@ -1,0 +1,21 @@
+07/05/2021 13:32
+
+A particularly important shape of vibration is the SINE WAVE. If we imagine a point on a circle that is rotating evenly at a particular frequency, e.g. 400 cycles per second, then the height of that point above a particular baseline drawn through the centre of the circle, as a function of time, defines a sine wave. (Fig-3, Fig-4)
+The important thing about sine waves is that any regular shape of vibration can be decomposed into a sum of sine wave vibrations, where the frequency of each sine wave vibration is a multiple of the frequency of vibration. For example, any shape of vibration at 100Hz can be decomposed into a sum of sine wave vibrations at 100Hz, 200Hz, 300Hz, and so on (Fig-5). Furthermore, such a decomposition (where it exists) is unique.
+
+The frequency of the vibration itself is called the fundamental frequency, and the multiples of the frequency are called HARMONICS. The decomposition of an arbitrary shape of vibration into harmonics is characterised by assigning an amplitude and phase to each sine wave component. The PHASE is the angle of the point on the circle defining that sine wave at time zero.
+
+This decomposition of vibrational shapes into sine waves defines the mathematical topic of Fourier Analysis.
+	1. Sine wave functions have mathematical properties that make them easy to deal with for many purposes. An arbitrary vibrational shape can be analysed by decomposing it into component sine waves, doing a calculation on each sine wave, and then adding all the results back together.
+	2. Decomposition into sine waves corresponds very closely to how the human ear itself perceives and analyses sound.
+
+The human ear and associated auditory processing parts of the brain analyse sound into frequency and amplitude of sine wave components. Each sine wave component also has a phase; but the only major use of phase information appears to be when perceived differences between phases of sounds received by the left ear and the right ear are used to help determine the locations of those sounds. In general phase information appears to play no significant role in the perception of music.
+
+Very few natural sounds consist of completely regular repeated vibrations. But many sounds can be regarded as close enough to regular over a limited time period or window. Thus one can analyse sound into frequency components as a function of time by performing analysis of the sound in a sliding window, where the window is centred on the current point in time. The amplitude of each frequency at each moment of time is then defined to be the amplitude of the frequency component of the sound contained within the window at that time. In practice we use a window that is much larger than the period of the vibrations being perceived (which in the human case is never more than 1/20 of a second) and much smaller than the period of time over which we are tracing the evolution of the characteristics of the sound. (Fig-6)
+The result of this analysis is a SPECTOGRAM. (Fig-7, Fig-8)
+
+** Figure 7 shows a spectrogram of some speech, and Figure 8 shows a spectrogram of part of a song. Even looking at these small fragments, you can see that the song has more regularity in both pitch and rhythm.
+The harmonics are clearly visible in the vowel portions of the syllables. The consonants tend to show up as an even spread of frequencies at the beginnings of syllables, reflecting their “noisy” nature.
+
+
+

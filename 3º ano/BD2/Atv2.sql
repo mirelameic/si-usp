@@ -1,0 +1,440 @@
+Atividade BD2
+Maria Eduarda Garcia - 11796621
+Mirela Mei - 11208392
+
+--------------------TABELAS--------------------
+
+CREATE TABLE ARTISTA(
+    NOME VARCHAR(100) NOT NULL,
+    DESCRICAO VARCHAR(200) NOT NULL,
+    ESTILO_PRINCIPAL VARCHAR(100) NOT NULL,
+    PERIODO_ART VARCHAR(100) NOT NULL,
+    PAIS_ORIGEM VARCHAR(100) NOT NULL,
+    DATA_NASCIMENTO DATE,
+    DATA_MORTE DATE,
+    PRIMARY KEY (NOME)
+);
+
+CREATE TYPE TIPO AS ENUM ('PINTURA','ESCULTURA','OUTRO');
+CREATE TYPE STATUS AS ENUM ('PERMANENTE','EMPRESTADO');
+
+CREATE TABLE OBJETOS_ARTE(
+    NUM_ID INT NOT NULL,
+    TITULO VARCHAR(100) NOT NULL,
+    NOME_ARTISTA VARCHAR(200),
+    DESCRICAO VARCHAR(200) NOT NULL,
+    ANO_CRIACAO DATE,
+    PERIODO_ART VARCHAR(100) NOT NULL,
+    PAIS_CULTURA VARCHAR(100) NOT NULL,
+    ESTILO VARCHAR(100) NOT NULL,
+    TIPO TIPO NOT NULL,
+    STATUS STATUS NOT NULL,
+    PRIMARY KEY (NUM_ID)
+);
+
+CREATE TABLE PINTURAS(
+    NUM_OBJ1 INT NOT NULL,
+    TIPO_TINTA VARCHAR(100) NOT NULL,
+    SUPORTE VARCHAR(100) NOT NULL,
+    PRIMARY KEY (NUM_OBJ1)
+);
+
+CREATE TABLE ESCULTURAS(
+    NUM_OBJ2 INT NOT NULL,
+    MATERIAL VARCHAR(100) NOT NULL,
+    ALTURA INT NOT NULL CHECK (ALTURA>0),
+    PESO INT NOT NULL CHECK (PESO>0),
+    PRIMARY KEY (NUM_OBJ2)
+);
+
+CREATE TABLE OUTROS(
+    NUM_OBJ3 INT NOT NULL,
+    TIPO VARCHAR(100) NOT NULL,
+    PRIMARY KEY (NUM_OBJ3)
+);
+
+CREATE TABLE EMPRESTADOS(
+    NUM_OBJ4 INT NOT NULL,
+    NOME_COLECAO VARCHAR(100) NOT NULL,
+    DATA_EMPRESTIMO DATE NOT NULL,
+    DATA_DEVOLUCAO DATE NOT NULL,
+    PRIMARY KEY (NUM_OBJ4)
+);
+
+CREATE TABLE PERMANENTES(
+    NUM_OBJ5 INT NOT NULL,
+    EM_EXPOSICAO BIT NOT NULL, 
+    DATA_AQUISICAO DATE NOT NULL,
+    CUSTO DOUBLE PRECISION NOT NULL CHECK (CUSTO>0),
+    COL_PERMANENTE VARCHAR(100) NOT NULL,
+    PRIMARY KEY (NUM_OBJ5)
+);
+
+CREATE TABLE COLECAO(
+    NOME_COLECAO VARCHAR(100) NOT NULL,
+    DESCRICAO VARCHAR(200) NOT NULL,
+    ENDERECO VARCHAR(200) NOT NULL,
+    TELEFONE VARCHAR(20) NOT NULL,
+    PESSOA_CONTATO VARCHAR(100) NOT NULL,
+    TIPO_COLECAO VARCHAR(100) NOT NULL,
+    PRIMARY KEY (NOME_COLECAO)
+);
+
+CREATE TABLE EXPOSTO_EM(
+    NUM_OBJ6 INT NOT NULL,
+    NOME_EXPOSICAO VARCHAR(100) NOT NULL,
+    PRIMARY KEY (NUM_OBJ6, NOME_EXPOSICAO)
+);
+
+CREATE TABLE EXPOSICOES(
+    NOME_EXPOSICAO VARCHAR(100) NOT NULL,
+    DATA_INICIO DATE NOT NULL,
+    DATA_FINAL DATE NOT NULL,
+    PRIMARY KEY (NOME_EXPOSICAO)
+);
+
+
+--------------------CHAVES ESTRANGEIRAS--------------------
+ALTER TABLE PINTURAS ADD CONSTRAINT pinturas_objarte_fk
+FOREIGN KEY (NUM_OBJ1)
+REFERENCES OBJETOS_ARTE (NUM_ID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE ESCULTURAS ADD CONSTRAINT esculturas_objarte_fk
+FOREIGN KEY (NUM_OBJ2)
+REFERENCES OBJETOS_ARTE (NUM_ID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE OUTROS ADD CONSTRAINT outros_objarte_fk
+FOREIGN KEY (NUM_OBJ3)
+REFERENCES OBJETOS_ARTE (NUM_ID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE EMPRESTADOS ADD CONSTRAINT emprestados_objarte_fk
+FOREIGN KEY (NUM_OBJ4)
+REFERENCES OBJETOS_ARTE (NUM_ID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE PERMANENTES ADD CONSTRAINT permanentes_objarte_fk
+FOREIGN KEY (NUM_OBJ5)
+REFERENCES OBJETOS_ARTE (NUM_ID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE EXPOSTO_EM ADD CONSTRAINT expostoem_objarte_fk
+FOREIGN KEY (NUM_OBJ6)
+REFERENCES OBJETOS_ARTE (NUM_ID)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE EXPOSTO_EM ADD CONSTRAINT expostoem_exposicoes_fk
+FOREIGN KEY (NOME_EXPOSICAO)
+REFERENCES EXPOSICOES (NOME_EXPOSICAO)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE OBJETOS_ARTE ADD CONSTRAINT objetosarte_artista_fk
+FOREIGN KEY (NOME_ARTISTA)
+REFERENCES ARTISTA (NOME)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE EMPRESTADOS ADD CONSTRAINT emprestados_colecao_fk
+FOREIGN KEY (NOME_COLECAO)
+REFERENCES COLECAO (NOME_COLECAO)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE PERMANENTES ADD CONSTRAINT permanentes_colecao_fk
+FOREIGN KEY (COL_PERMANENTE)
+REFERENCES COLECAO (NOME_COLECAO)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+
+--------------------INSERÇÕES--------------------
+INSERT INTO ARTISTA VALUES('Tarsila do Amaral', 'descrição', 'Modernista', 'Modernismo', 'Brasil', DATE '1886-12-17', DATE '1973-12-17');
+
+INSERT INTO ARTISTA VALUES('Di Cavalcante', 'descrição', 'Modernista', 'Modernismo', 'Brasil', DATE '1897-12-17', DATE '1976-12-17');
+
+INSERT INTO ARTISTA VALUES('Vicent Van Gogh', 'descrição', 'Impressionista', 'Pós-Impressionismo', 'Holanda', DATE '1853-12-17', DATE '1890-12-17');
+
+INSERT INTO ARTISTA VALUES('Pablo Picaso', 'descrição', 'Cubista', 'Cubismo', 'França', DATE '1881-12-17', DATE '1973-12-17');
+
+INSERT INTO ARTISTA VALUES('Frida Kahlo', 'descrição', 'Surrealista', 'Surrealismo', 'México', DATE '1907-12-17', DATE '1954-12-17');
+
+INSERT INTO ARTISTA VALUES('Candido Portinari', 'descrição', 'Expressionista', 'Expressionismo', 'Brasil', DATE '1903-12-17', DATE '1962-12-17');
+
+INSERT INTO ARTISTA VALUES('Salvador Dalí', 'descrição', 'Surrealista', 'Surrealismo', 'Espanha', DATE '1904-12-17', DATE '1989-12-17');
+
+INSERT INTO ARTISTA VALUES('Anita Malfatti', 'descrição', 'Modernista', 'Modernismo', 'Brasil', DATE '1889-12-17', DATE '1964-12-17');
+
+INSERT INTO ARTISTA VALUES('Mário de Andrade', 'descrição', 'Modernista', 'Modernismo', 'Brasil', DATE '1893-12-17', DATE '1945-12-17');
+
+INSERT INTO ARTISTA VALUES('Artemisia Gentileschi', 'descrição', 'Barroca', 'Barroco', 'Itália', DATE '1593-12-17', DATE '1653-12-17');
+
+
+
+INSERT INTO EXPOSICOES VALUES('Exposicao Paulista', DATE '2010-01-01', DATE '2012-01-01');
+
+INSERT INTO EXPOSICOES VALUES('Exposicao MASP', DATE '2012-01-01', DATE '2014-01-01');
+
+
+
+INSERT INTO COLECAO VALUES('Colecao de Verao', 'descrição', 'Av Paulista', '11999999', 'Contato', 'Tipo');
+
+INSERT INTO COLECAO VALUES('Colecao de Inverno', 'descrição', 'Av Paulista', '11999999', 'Contato', 'Tipo');
+
+INSERT INTO COLECAO VALUES('Colecao Permanente', 'descrição', 'São Paulo', '11999999', 'Contato', 'Tipo');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(1, 'Abaporu', 'Tarsila do Amaral', 'descrição', DATE '1928-12-17', 'Antropofágico', 'Brasil', 'óleo sobre tela', 'PINTURA', 'EMPRESTADO', 11200.0);
+
+INSERT INTO PINTURAS VALUES(1, 'óleo', 'suporte');
+
+INSERT INTO EMPRESTADOS VALUES(1, 'Colecao de Verao', DATE '2010-01-01', DATE '2012-01-01');
+
+INSERT INTO EXPOSTO_EM VALUES(1, 'Exposicao Paulista');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(2, 'A Negra', 'Tarsila do Amaral', 'descrição', DATE '1923-12-17', 'Antropofágico', 'Brasil', 'óleo sobre tela', 'PINTURA', 'EMPRESTADO', 11500.0);
+
+INSERT INTO PINTURAS VALUES(2, 'óleo', 'suporte');
+
+INSERT INTO EMPRESTADOS VALUES(2, 'Colecao de Verao', DATE '2010-01-01', DATE '2012-01-01');
+
+INSERT INTO EXPOSTO_EM VALUES(2, 'Exposicao Paulista');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(3, 'Castelo', NULL, 'descrição', DATE '1940-12-17', 'Antropofágico', 'Iália', 'óleo sobre tela', 'PINTURA', 'EMPRESTADO', 1300.0);
+
+INSERT INTO PINTURAS VALUES(3, 'óleo', 'suporte');
+
+INSERT INTO EMPRESTADOS VALUES(3, 'Colecao de Verao', DATE '2010-01-01', DATE '2012-01-01');
+
+INSERT INTO EXPOSTO_EM VALUES(3, 'Exposicao Paulista');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(4, 'A Ponte', NULL, 'descrição', DATE '1940-12-17', 'Antropofágico', 'Iália', 'óleo sobre tela', 'PINTURA', 'EMPRESTADO', 1300.0);
+
+INSERT INTO PINTURAS VALUES(4, 'óleo', 'suporte');
+
+INSERT INTO EMPRESTADOS VALUES(4, 'Colecao de Verao', DATE '2010-01-01', DATE '2012-01-01');
+
+INSERT INTO EXPOSTO_EM VALUES(4, 'Exposicao Paulista');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(5, 'Mulatas', 'Di Cavalcante', 'descrição', DATE '1928-12-17', 'Antropofágico', 'Brasil', 'Retrato', 'PINTURA', 'EMPRESTADO', 2200.0);
+
+INSERT INTO PINTURAS VALUES(5, 'óleo', 'suporte');
+
+INSERT INTO EMPRESTADOS VALUES(5, 'Colecao de Inverno', DATE '2012-01-01', DATE '2012-01-01');
+
+INSERT INTO EXPOSTO_EM VALUES(5, 'Exposicao MASP');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(6, 'A Noite Estrelada', 'Vicent Van Gogh', 'descrição', DATE '1889-12-17', 'Modernismo', 'Holanda', 'óleo sobre tela', 'PINTURA', 'PERMANENTE', 2500.0);
+
+INSERT INTO PINTURAS VALUES(6, 'óleo', 'suporte');
+
+INSERT INTO PERMANENTES VALUES(6, '1', DATE '2015-01-01', 'Colecao Permanente');
+
+INSERT INTO EXPOSTO_EM VALUES(6, 'Exposicao MASP');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(7, 'Os Girassóis', 'Vicent Van Gogh', 'descrição', DATE '1889-12-17', 'Modernismo', 'Holanda', 'óleo sobre tela', 'PINTURA', 'PERMANENTE', 25500.0);
+
+INSERT INTO PINTURAS VALUES(7, 'óleo', 'suporte');
+
+INSERT INTO PERMANENTES VALUES(7, '1', DATE '2015-01-01', 'Colecao Permanente');
+
+INSERT INTO EXPOSTO_EM VALUES(7, 'Exposicao Paulista');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(8, 'Auto-Retrato', 'Vicent Van Gogh', 'descrição', DATE '1889-12-17', 'Modernismo', 'Holanda', 'óleo sobre tela', 'PINTURA', 'PERMANENTE', 25500.0);
+
+INSERT INTO PINTURAS VALUES(8, 'óleo', 'suporte');
+
+INSERT INTO EMPRESTADOS VALUES(8, 'Colecao de Inverno', DATE '2012-01-01', DATE '2012-01-01');
+
+INSERT INTO EXPOSTO_EM VALUES(8, 'Exposicao Paulista');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(9, 'O Grande Masturbador', 'Salvador Dalí', 'descrição', DATE '1929-12-17', 'Surrealismo', 'Espanha', 'óleo sobre tela', 'PINTURA', 'PERMANENTE', 27500.0);
+
+INSERT INTO PINTURAS VALUES(9, 'óleo', 'suporte');
+
+INSERT INTO PERMANENTES VALUES(9, '1', DATE '2015-01-01', 'Colecao Permanente');
+
+INSERT INTO EXPOSTO_EM VALUES(9, 'Exposicao MASP');
+
+
+
+INSERT INTO OBJETOS_ARTE VALUES(10, 'A Persistência da Memória', 'Salvador Dalí', 'descrição', DATE '1931-12-17', 'Surrealismo', 'Espanha', 'óleo sobre tela', 'PINTURA', 'PERMANENTE', 1200000.0);
+
+INSERT INTO PINTURAS VALUES(10, 'óleo', 'suporte');
+
+INSERT INTO PERMANENTES VALUES(10, '1', DATE '2015-01-01', 'Colecao Permanente');
+
+INSERT INTO EXPOSTO_EM VALUES(10, 'Exposicao MASP');
+
+
+--------------------QUESTÕES--------------------
+1. Adicione um campo Custo nos objetos de arte e remova esse campo dos objetos permanentes.
+
+	ALTER TABLE OBJETOS_ARTE ADD COLUMN CUSTO DOUBLE PRECISION NOT NULL;
+	ALTER TABLE PERMANENTES DROP COLUMN CUSTO;
+	
+	
+2. Listar os objetos de arte (Numid e título) de artistas desconhecidos.
+
+	SELECT NUM_ID, TITULO FROM OBJETOS_ARTE WHERE NOME_ARTISTA IS NULL;
+
+
+3. Listar os objetos de arte (Numid e título) expostos em todas as exposições de 2010.
+
+	SELECT arte.NUM_ID, arte.TITULO FROM OBJETOS_ARTE arte
+	JOIN EXPOSTO_EM exposto
+		ON arte.NUM_ID = exposto.NUM_OBJ6
+	JOIN EXPOSICOES exposicao
+		ON exposto.NOME_EXPOSICAO = exposicao.NOME_EXPOSICAO
+	WHERE exposicao.DATA_INICIO = DATE '2010-01-01';
+	
+
+4. Listar os objetos de arte (Numid, título, coleção) criados pelo autor X (Nome).
+
+	SELECT arte.NUM_ID, arte.TITULO, col.NOME_COLECAO 
+	FROM OBJETOS_ARTE arte
+	FULL JOIN PERMANENTES per
+		ON arte.NUM_ID = per.NUM_OBJ5
+	FULL JOIN EMPRESTADOS emp
+		ON arte.NUM_ID = emp.NUM_OBJ4
+	FULL JOIN COLECAO col
+		ON per.COL_PERMANENTE = col.NOME_COLECAO OR emp.NOME_COLECAO = col.NOME_COLECAO
+	WHERE NOME_ARTISTA = 'Vicent Van Gogh';
+	
+
+5. Listar as coleções (Nome e típo) que contêm objetos de arte produzidos pelo artista X.
+
+	SELECT col.NOME_COLECAO, col.TIPO_COLECAO 
+	FROM OBJETOS_ARTE arte
+	FULL JOIN PERMANENTES per
+		ON arte.NUM_ID = per.NUM_OBJ5
+	FULL JOIN EMPRESTADOS emp
+		ON arte.NUM_ID = emp.NUM_OBJ4
+	FULL JOIN COLECAO col
+		ON per.COL_PERMANENTE = col.NOME_COLECAO OR emp.NOME_COLECAO = col.NOME_COLECAO
+	WHERE NOME_ARTISTA = 'Vicent Van Gogh';
+	
+
+6. Qual é o custo total da coleção permanente do museu?
+
+	SELECT SUM(CUSTO) AS CUSTO_TOTAL FROM OBJETOS_ARTE
+	WHERE STATUS = 'PERMANENTE';
+
+7. Quais são os objetos (Numid e título) da coleção permanente cujo custo é maior que o custo médio de todos os objetos do museu?
+	
+	SELECT NUM_ID, TITULO FROM OBJETOS_ARTE
+	WHERE STATUS='PERMANENTE' AND CUSTO>
+	(SELECT AVG(CUSTO) FROM OBJETOS_ARTE);
+	
+	
+	---------------nao sei pq essa nao deu certo
+	SELECT NUM_ID, TITULO FROM OBJETOS_ARTE
+	WHERE STATUS='PERMANENTE'
+	GROUP BY NUM_ID
+	HAVING (OBJETOS_ARTE.CUSTO > AVG(CUSTO));
+	
+	
+	---------------apenas um teste
+	SELECT NUM_OBJ5, TITULO FROM PERMANENTES, OBJETOS_ARTE
+	GROUP BY NUM_OBJ5, TITULO, CUSTO
+	HAVING (CUSTO = 25500.0);
+
+8. Quais são as coleções (sem considerar a permanente) com o maior número de objetos de arte emprestados?
+
+	SELECT NOME_COLECAO FROM EMPRESTADOS
+	GROUP BY NOME_COLECAO
+	HAVING (COUNT(EMPRESTADOS)=COUNT(NUM_OBJ4));
+ 	
+ 	---------------nao sei pq essa nao funciona
+ 	SELECT NOME_COLECAO FROM EMPRESTADOS
+	GROUP BY NOME_COLECAO
+	HAVING (COUNT(EMPRESTADOS)=
+	(SELECT MAX
+	((SELECT COUNT(EMPRESTADOS) FROM EMPRESTADOS)) 
+	FROM EMPRESTADOS));
+	
+9. Quais são as coleções (sem considerar a permanente) com o maior custo total de objetos emprestados?
+
+	SELECT NOME_COLECAO FROM EMPRESTADOS, OBJETOS_ARTE
+        WHERE STATUS='EMPRESTADO'
+        GROUP BY NOME_COLECAO
+        HAVING (SUM(OBJETOS_ARTE.CUSTO)>AVG(OBJETOS_ARTE.CUSTO));
+	
+	---------------nao sei pq essa nao funciona
+	SELECT NOME_COLECAO FROM EMPRESTADOS, OBJETOS_ARTE
+	GROUP BY NOME_COLECAO
+	HAVING (SUM(CUSTO)=
+	(SELECT MAX
+	((SELECT SUM(CUSTO) FROM EMPRESTADOS)) 
+	FROM EMPRESTADOS));
+
+10. Quais são as coleções com maior número de objetos emprestados que o número de objetos da coleção permanente?
+
+	SELECT NOME_COLECAO FROM EMPRESTADOS, PERMANENTES, OBJETOS_ARTE
+	WHERE STATUS='EMPRESTADO'
+	GROUP BY NOME_COLECAO
+	HAVING (SUM(NUM_OBJ4)>SUM(NUM_OBJ5));
+
+11. Quais são as coleções que tem contribuído em todas as exposições de 2010?
+
+	SELECT NOME_COLECAO FROM EMPRESTADOS, PERMANENTES, EXPOSICOES
+	GROUP BY NOME_COLECAO, DATA_INICIO
+	HAVING (DATA_INICIO = DATE '2010-01-01');
+
+12. Remover todos os objetos emprestados da coleção Y.
+	
+	DELETE FROM OBJETOS_ARTE USING EMPRESTADOS
+	WHERE STATUS = 'EMPRESTADO' AND NOME_COLECAO = 'Colecao de Verao';
+
+13. Transferir o objeto de título X da coleção Y para coleção permanente.
+
+	UPDATE OBJETOS_ARTE
+	SET OBJETOS_ARTE.STATUS = 'PERMANENTE',
+	EMPRESTADOS.NOME_COLECAO = 'Colecao Permanente'
+   	FROM EMPRESTADOS
+  	WHERE OBJETOS_ARTE.NUM_ID = EMPRESTADOS.NUM_OBJ4 AND OBJETOS_ARTE.TITULO = 'A Noite Estrelada';
+
+	
+	UPDATE OBJETOS_ARTE
+	SET
+	    STATUS = 'PERMANENTE',
+	    NOME_COLECAO = 'Colecao Permanente' 
+	FROM
+	    OBJETOS_ARTE JOIN EMPRESTADOS
+	    ON NUM_ID = NUM_OBJ4
+	WHERE
+	    TITULO = 'A Noite Estrelada';
+
+
+
+
+
+
+
+
+

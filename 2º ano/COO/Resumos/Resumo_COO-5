@@ -1,0 +1,29 @@
+24/05/2021 20:00
+
+Runtime Polymorphism:
+
+Method overloading is known for compile-time polymorphism. But an important feature of Java is its ability to support the concept of runtime polymorphism. It is also referred to as dynamic method dispatch. Here, the call to an overridden method is resolved dynamically at runtime. In other words, you can invoke the appropriate method based on the object to which you are referring.
+
+Vehicle obVehicle = new Bus();
+obVehicle.showMe();
+
+** Vehicle is the parent class and Bus is the child class, and the Bus class contains an overridden method, showMe(). So, in this demonstration, following the rule of dynamic method dispatch, you can invoke this overridden method of the Bus class at runtime.
+
+Upcasting means casting to a super type (or parent type), and downcasting is the reverse procedure.
+
+Vehicle obVehicle = new Bus(); //Upcasting
+Bus obBus = (Bus)obVehicle; //Downcasting
+
+But you cannot use either of the following lines:
+obVehicle.busSpecificMethod(); //Error
+Since the apparent type in the code is a Vehicle, but not a Bus
+To remove this error, you need to downcast, as follows: ((Bus) obVehicle).busSpecificMethod();
+
+Bus obBus = new Vehicle(); //Error
+As mentioned, to remove this error, you may want to downcast, as follows:
+Bus obBus=new Bus();
+//May encounter with a runtime error:ClassCastException
+obBus=(Bus)obVehicle;
+But downcasting is risky because you may encounter a runtime exception.
+
+

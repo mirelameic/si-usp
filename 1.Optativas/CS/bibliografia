@@ -1,0 +1,71 @@
+Bibliografia e referências
+
+Tipologia sonora:
+
+BISTAFA, S.R. (2006). Acústica aplicada ao controle de ruído. Ed. Edgard Blücher.
+
+Acústica e psicoacústica:
+
+ROEDERER, J. G. (1998). Introdução à Física e Psicofísica da Música. São Paulo: Edusp.
+EVEREST, F. A. (2001). The master handbook of acoustics. New York: Mac Graw Hill.
+
+Registro, representação e áudio digital:
+
+POHLMANN, K. C. (1995). Principles of digital audio. New York: McGraw-Hill.
+RATTON, M. (2005). MIDI total, fundamentos e aplicações. Rio de Janeiro: Ed. Música e Tecnologia.
+
+Computação musical:
+
+PUCKETTE, M. (2006) The Theory and Technique of Electronic Music. New Jersey: World Scientific Publishing Co. Pte. Ltd.
+MOORE, F. R. (1990). Elements of Computer Music. Prentice Hall.
+ROADS, C. (1996). The Computer Music Tutorial. Cambridge, MA: The MIT Press.
+
+Composição e criação musical:
+
+MIRANDA, E. R. (2004) Composing music with computers. Bath: Elsevier.
+
+Processamento:
+
+Zölzer, U. (1997) Digital audio signal processing. Nova York: John Wiley & Sons.
+Mitra, S. K. (1998) Digital signal processing: a computer-based approach. Nova York: McGraw Hill.
+ROCCHESSO, D. (2003) Introduction to sound processing. Creative Commons. ISBN 88-901126-1-1
+Noceti Filho, S. (2010) Filtros seletores de sinais. 3a. ed. Florianópolis: Ed. da UFSC.
+
+Análise sonora:
+
+KLINGBEIL, M. Software for spectral analysis, editing, and synthesis. In: ICMC (International Computer Music Conference), 2005.
+
+Síntese:
+
+MIRANDA, E. R. (1998). Computer Synthesis for the Electronic Musician. Oxford: Focal Press.
+COOK, P. R. (2002). Real Sound Synthesis for Interactive Applications. Natick: A. K. Peters Ltd.
+AIKIN, J. (2013) CSOUND Power! The comprehensive guide. Boston: Course Technology PTR.
+CHOWNING, J. M. The Synthesis of Complex Audio Spectra by  Means  of  Frequency  Modulation.  Journal  of  the  Audio Engineering  Society  21(7):526-534. [S.l.:  s.n.],  1973.  (Reprinted  in Computer Music Journal 1[2]:46-54, 1977).
+ROADS,   C. Automated   Granular   Synthesis   of   Sounds.Computer  Music  Journal  2(2):61-62.  Cambridge,  Massachusetts: MIT Press, 1978.
+
+Programação e computação sonora:
+
+Aaron, S. et al. Sonic Pi Tutorial, v3.1. Disponível em: https://sonic-pi.net/tutorial. Acesso em: 17/out/2019.
+Pure Data. Flossmanuals. ed. 1.0 (inicial). 02/jan/2019. Disponível em: https://en.flossmanuals.net/pure-data/_info/.
+BOULANGER, R., LAZZARINI, V. (2011) The audio programming book. Cambridge: The MIT Press.
+HOSKEN, D. (2011) An introduction to music technology. Nova York: Routledge.
+Brown, Andrew (2007) Computers in Music Education. New York, NY: Routledge
+Dean, Roger (ed.) (2009) The Oxford Handbook of Computer Music. NY: Oxford University Press
+
+Gaming:
+
+Phillips, Winifred (2014) A Composer's Guide to Game Music. Cambridge, MA: MIT Press
+
+MIR e tópicos avançados:
+
+Klapuri, A., Davy, M. (eds) (2006) Signal processing methods for music transcription. Nova York: Springer.
+COPE, D. Experiments  in  Musical  Intelligence.Disponível  em  http://arts.ucsc.edu/faculty/cope/experiments.htm.   Acessado   em  abril de 2004.  —> COPE, David. Experiments in musical intelligence (EMI): Non‐linear linguistic‐based composition. Journal of New Music Research, v. 18, n. 1-2, p. 117-139, 1989.
+
+Repositórios, bibliotecas, APIs e recursos:
+
+Archives of Brazilian Symposium on Computer Music (SBCM). Disponível em: http://compmus.ime.usp.br/sbcm/. Acesso em: 18 out 2019.
+MIDI MANUFACTURERS ASSOCIATION. Disponível em http://www.midi.org. Acesso em: 18 out 2019.
+Pure Data (Pd). Disponível em: http://puredata.info/. Acesso em: 18 out 2019.
+OpenAL: Cross platform 3D audio API. Disponível em: https://www.openal.org/. Acesso em 18 out 2019.
+Advanced Linux Sound Architecture (ALSA) project homepage. Disponível em: https://www.alsa-project.org. Acesso em: 18 out 2019.
+MDN web docs. API Web Áudio. Disponível em: https://developer.mozilla.org/pt-BR/docs/Web/API/API_Web_Audio. Acesso em: 18 out 2019.

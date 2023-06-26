@@ -1,0 +1,62 @@
+07/05/2021 08:37
+
+Nested Class:
+When you place one class inside another class, such a class is called a nested class. Java supports both static nested classes and non-static nested classes.
+An inner class can have access to both the static and the non-static members of the outer class.
+
+Q: Why are nested classes useful?
+They can promote encapsulation with better security. The logical grouping of the classes
+is easily maintainable too.
+
+Wrapper Class:
+In some special situations, you may need to convert a primitive type into an object. For example, when you simply need to pass an object in a method parameter, this conversion is useful. The same thing applies for generic programming.
+
+int myInt1 = 1;
+//Coverting primitive int to Integer object
+Integer intOb = new Integer(i);
+//Converting back from Integer Object to primitive int
+int myInt2 = intOb.intValue();
+
+** the process of converting a primitive type into an object of the corresponding
+wrapper class is termed autoboxing. For example, int to Integer, double to
+Double, float to Float, etc. The reverse procedure is called unboxing. It is also
+important to note that the constructors Interger(int) and Long(long) are
+deprecated since java9.
+
+Garbage Collection:
+JVM uses a background thread, commonly known as the garbage collector, to detect unused objects and free up the memory occupied by them.
+The biggest advantage of GC is that normally you do not need to worry about memory leaks, because you can rely on the automatic garbage-collection technique. But in some special cases, you may explicitly need to free up memory to avoid memory leaks, because the garbage collector is for some reason unable to detect those special scenarios.
+The basic thing to remember is that when an object is unreachable from a root object (a root object is a root in an object tree), the object is eligible for garbage collection. An object can have multiple references to it. It is also important to understand that when the reference count is zero, only the object will be garbage collected.
+
+Inheritance:
+The main objective of inheritance is to promote reusability and eliminate redundancy in code. It also demonstrates how a child class can obtain the features (or characteristics) of its parent class.
+
+class Parent{
+	//some code
+}
+
+class Child extends Parent{
+	//some code
+}
+
+A child can derive from multiple parents. But this type of inheritance is not supported in
+Java through classes, only through interfaces.
+
+** in Java, Object (in java.lang package) is the superclass for all classes. All other classes directly or indirectly are an inheritor of that class.
+
+The Keyword Super:
+In Java, there is a special keyword called super. It is used to access the members of a parent class in an efficient way. Whenever a child class wants to refer to its immediate parent, it can use the super keyword.
+The forms using the keyword super are valid only in an instance method, instance initializer, or constructor of a class, or in the initializer of an instance variable of a class. The invocation of a super class constructor must be the first line in the subclass constructor. It does not matter whether you make an explicit call to the parent class constructor through super() or not, as the parent class constructor is always called.
+
+
+
+
+
+
+
+
+
+
+
+
+

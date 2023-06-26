@@ -1,0 +1,64 @@
+05/05/2021 21:07
+
+Object-Oriented Programming in Java
+
+The fundamental difference between structured programming and object-oriented programming can be summarized as follows: In object-oriented programming, instead of focusing on the operations on data, focus on the data itself.
+A class is the blueprint or template for its objects. Objects are instances of a class. Each object has its own state, behavior, and identity. In simple language, you can say that in structured programming, you segregate the problem into small functions, and in OOP, you divide the problem into objects
+
+Class:
+A class is a blueprint, template, or prototype. It can describe the behaviors of its objects and is the foundation for how the objects are built or instantiated.
+
+class Test{
+	int a;
+	
+	void method(){
+	int a = 0;
+	}
+}
+
+Object:
+An object is an instance of a class.
+
+Test teste1 = new Test();
+
+A class is a logical entity. Once you instantiate a class, you create objects. These objects occupy memory in your system. So, objects are physical entities. The new operator is used to create an object of class. It allocates memory to it and returns an object of the class, whose reference is stored in the variable.
+In general, you can place different things inside your class declaration. For example, you can put variables, methods, constructors, inner classes, initialization blocks, enums (these are also internally implemented as classes), and so on.
+
+Encapsulation:
+In object-oriented programming, you do not allow your data to flow freely inside the system. Instead, you wrap the data and functions into a single unit. In Java, you can implement encapsulation in various ways. For example, you can use the access specifiers (or modifiers) and getter-setter methods in this context.
+
+Abstraction:
+The key purpose of abstraction is to show only the essential features and to hide the background details of implementation. Abstraction is also very much related to encapsulation, but the difference may be easily understood with a simple day-to-day scenario.
+When you press a button on your remote control to switch on the TV, you do not care about the internal circuits of the TV or how the remote control controls the operation of the TV. You simply know that different buttons on the remote control have different functionalities, and as long as they work properly, you are happy. So, the user is isolated from the complex implementation details, which are encapsulated within the remote control (and TV). At the same time, the common operations that can be performed through the remote control can be thought of as an abstraction.
+
+Inheritance:
+Whenever we talk about reusability, we’ll generally refer to inheritance, which is a process in which one object acquires the properties of another object.
+
+Polymorphism:
+Polymorphism is generally associated with one name with many forms. In the coding world, you can think of a common method, addition. With addition in the context of two integers, you expect to get a sum of the integers. But for string operands, you expect to get a concatenated string.
+Compile-time polymorphism: The compiler can decide very early which method to invoke in which situation once the program is compiled. This is also known as static binding or early binding.
+Runtime polymorphism: The actual method calls are resolved at runtime. At compile time, you cannot predict which method will be invoked when the program runs (for example, the program may behave differently with different inputs).
+
+Constructor:
+After the new keyword, the class name is followed by a parenthesis. You use this approach to construct an object.
+• The compiler supplies a no-argument default constructor if you do not include any constructor for your class. This default constructor actually calls the no-argument constructor of the superclass:
+	Object(){
+
+	}
+• Constructors are used to run initialization codes.
+• The class name and the corresponding constructor’s name(s) must be the same.
+• Constructors do not have any return types.
+
+public Test(int a){
+	System.out.println("Hello World!");
+	this.a = 10;
+}
+*If your local variable has the same name as the instance variable, the local variable will hide the instance variable. In this type of scenario, the keyword this helps to resolve the namespace collision because it helps to identify which one is a local variable (method parameter) and which one is the instance variable (field).
+
+
+
+
+
+
+
+
