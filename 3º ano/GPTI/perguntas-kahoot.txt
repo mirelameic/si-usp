@@ -1,0 +1,60 @@
+ O que é um stakeholder?
+a) Um membro da equipe do projeto
+b) Um fornecedor do projeto
+c) Qualquer pessoa ou organização que possa afetar ou ser afetada pelo projeto
+d) Um cliente do projeto
+
+ Qual é a importância das habilidades interpessoais ao lidar com as partes interessadas?
+a) Garantir que o projeto seja concluído dentro do prazo
+b) Garantir que o projeto seja concluído dentro do orçamento
+c) Garantir que as partes interessadas sejam mantidas satisfeitas
+d) Garantir que o projeto atenda aos requisitos técnicos
+
+ Qual é o objetivo da análise de partes interessadas?
+a) Identificar os riscos do projeto
+b) Verificar se cada objetivo do domínio está sendo cumprido
+c) Identificar quais interesses devem ser considerados em um projeto - slide 17
+d) Estabelecer o cronograma do projeto
+
+ Qual é o objetivo das técnicas de engajamento de partes interessadas?
+a) Identificar os riscos do projeto
+b) Verificar se cada objetivo do domínio está sendo cumprido - slide 17
+c) Definir o escopo do projeto
+d) Estabelecer o cronograma do projeto
+
+ O que é necessário para tornar as partes interessadas realmente interessadas?
+a) Compreender sentimentos, emoções, crenças e valores
+b) Analisar aspectos da posição de cada parte interessada
+c) Identificar as partes interessadas de alto nível
+d) Todas as opções anteriores - slide 12
+
+ O que pode indicar falta de sincronia das partes interessadas nos objetivos do projeto?
+a) Muitas mudanças no escopo - slide 17
+b) Falta de recursos financeiros
+c) Problemas técnicos
+d) Falta de comunicação
+
+ O que pode ser feito para aumentar o engajamento das partes interessadas?
+a) Ignorar as preocupações das partes interessadas
+b) Comunicar-se com as partes interessadas apenas quando necessário
+c) Envolver as partes interessadas em todas as fases do projeto
+d) Não incomodar as partes interessadas
+
+ Qual é o objetivo das interações com outros domínios?
+a) Identificar os riscos do projeto
+b) Verificar se cada objetivo do domínio está sendo cumprido
+c) Identificar as interações entre o projeto e outros domínios - slide 3
+d) Estabelecer o cronograma do projeto
+
+ Como verificar os resultados do projeto?
+a) Não é necessário verificar os resultados
+b) Comparar os resultados com os objetivos do projeto - slide 3
+c) Não é possível verificar os resultados
+d) Verificar apenas os resultados financeiros do projeto
+
+ Quais são os domínios de desempenho mencionados no documento?
+a) Domínio de Desempenho do Planejamento
+b) Domínio de Desempenho da Medição
+c) Domínio de Desempenho da Incerteza
+d) Todas as opções anteriores - slide 5
+
