@@ -68,6 +68,7 @@ Contém todas as disciplinas cursadas durante 5 anos (2019-2023) na graduação 
   - Segurança da Informação (SI)
   - Tópicos Especiais em Bancos de Dados (TEBD)
   - Análise de Redes Sociais (ARS)
+  - Gestão Empresarial (GE)
 
 ### `Ciclo Básico`
 
