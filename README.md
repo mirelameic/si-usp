@@ -1,7 +1,7 @@
 # Sistemas de Informação - EACH USP
 
 Contém todas as disciplinas cursadas durante 5 anos (2019-2023) na graduação de Sistemas de Informação da Universidade de São Paulo.
-  - [Bacharelado em Sistemas de Informação](https://www.each.usp.br/si/)
+  - [Bacharelado em Sistemas de Informação](https://www.each.usp.br/si/assets/html/about.html)
 
 ## Disciplinas
 
