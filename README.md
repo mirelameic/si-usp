@@ -73,10 +73,10 @@ Contém todas as disciplinas cursadas durante 5 anos e meio (2019-2024) na gradu
 ### `Ciclo Básico`
 
   - Sociedade, Multiculturalismo e Direitos – Direitos Humanos e Multiculturalismo (SMD)
-  - Ciências da Natureza – Ciências da Vida (CN)
   - Psicologia, Educação e Temas Contemporâneos – Uma Visão Psicanalítica (PET)
-  - Sociedade, Meio Ambiente e Cidadania – Sociedade, Ambiente e Cidadania (SMC)
   - Arte, Literatura e Cultura – Fantasia e Ficção Científica na Cultura Pop (ALC)
+  - Ciências da Natureza – Ciências da Vida (CN)
+  - Sociedade, Meio Ambiente e Cidadania – Sociedade, Ambiente e Cidadania (SMC)
 
 
 ## Grade Curricular
