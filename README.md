@@ -62,11 +62,11 @@ Contém todas as disciplinas cursadas durante 5 anos e meio (2019-2024) na gradu
 
 ### `Optativas`
 
-  - Construção de Compiladores (CC)
   - Computação Sônica (CS)
-  - Governo Aberto (GA)
+  - Construção de Compiladores (CC)
   - Segurança da Informação (SI)
   - Tópicos Especiais em Bancos de Dados (TEBD)
+  - Governo Aberto (GA)
   - Análise de Redes Sociais (ARS)
   - Gestão Empresarial (GE)
 
